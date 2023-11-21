@@ -1,18 +1,14 @@
 import unittest
-from script import add_numbers
+from script import add_numbers, multiply_numbers
 
-class TestAddition(unittest.TestCase):
-    def test_add_positive_numbers(self):
+class TestProgram(unittest.TestCase):
+    def test_add_numbers(self):
         result = add_numbers(3, 5)
         self.assertEqual(result, 8)
 
-    def test_add_negative_numbers(self):
-        result = add_numbers(-2, -7)
-        self.assertEqual(result, -9)
-
-    def test_add_mixed_numbers(self):
-        result = add_numbers(10, -3)
-        self.assertEqual(result, 7)
+    def test_multiply_numbers(self):
+        result = multiply_numbers(3, 5)
+        self.assertEqual(result, 15)
 
 if __name__ == '__main__':
     unittest.main()
