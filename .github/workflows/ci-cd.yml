@@ -1,1 +1,27 @@
+name: CI/CD Pipeline
 
+on:
+  push:
+    branches:
+      - main  # ajuste conforme necessário
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # ajuste conforme necessário
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # se houver algum requisito
+
+    - name: Run tests
+      run: python -m unittest discover  # ajuste conforme necessário
