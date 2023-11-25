@@ -3,10 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # ajuste conforme necessário
+      - main
 
 jobs:
-  test:
+  test-ubuntu:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,12 +16,52 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8  # ajuste conforme necessário
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
-       # python -m pip install --upgrade pip
-        #pip install -r requirements.txt  # se houver algum requisito
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Se houver algum requisito
 
     - name: Run tests
-      run: python -m unittest discover  # ajuste conforme necessário
+      run: python -m unittest discover
+
+  test-macos:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Se houver algum requisito
+
+    - name: Run tests
+      run: python -m unittest discover
+
+  test-windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Se houver algum requisito
+
+    - name: Run tests
+      run: python -m unittest discover
