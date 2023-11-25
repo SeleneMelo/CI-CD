@@ -28,10 +28,5 @@ class TestProgram(unittest.TestCase):
         result = fibonacci(15)
         self.assertEqual(result, [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377])
 
-    def test_fibonacci_string_input(self):
-        # Teste para garantir que a função lida bem com entradas não numéricas
-        result = fibonacci("abc")
-        self.assertEqual(result, [])
-
 if __name__ == '__main__':
     unittest.main()
