@@ -8,4 +8,6 @@ def fibonacci(n):
     for _ in range(2, n):
         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
 
+    print("oi");
+
     return fib_sequence
