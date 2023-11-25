@@ -7,4 +7,4 @@ Configure o seu workflow do GitHub Actions para testar o programa em três siste
 
 - Código implementado: Calculadora Fibonacci
 - Linguagem implementada: Python
-- Número de testes de unidade implementados: 6
+- Número de testes de unidade implementados: 7
